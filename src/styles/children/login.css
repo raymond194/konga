@@ -1,0 +1,133 @@
+.modalBody-login {
+    background-color: #f7f5f5;
+    padding: 24px 18px 0px 18px;
+    height: 100vh;
+}
+
+
+.form-col {
+    display: flex;
+    flex-direction: column;
+}
+
+label[for="email"] {
+    font-size: 13px;
+
+}
+
+label[for="password"] {
+    font-size: 13px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.label-splitter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.forgot-pswd {
+    color: #94004f;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.showPswd {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.text-input {
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.342);
+    padding: 4px 0px 6px 12px;
+    margin-top: 6px;
+}
+
+.text-input::placeholder {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.text-input:focus {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.993);
+}
+
+.submitBtn {
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    background-color: #33b27b;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 0px;
+    margin-top: 20px;
+}
+
+.submitBtn:hover {
+    background-color: #33b27be7;
+}
+
+.error {
+    color: #ff3b3b;
+    font-size: 12px;
+}
+
+.text-input.errorBorder {
+    border: 1px solid #ff3b3b;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+    margin: 20px 0;
+
+}
+
+.text span {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 4px 3.5px 3px 3.5px;
+
+}
+
+.text::before,
+.text::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.LoginBrowsweBtn {
+    border: 1px solid #4285fa;
+    color: #4285fa;
+    font-size: 12px;
+    padding: 8px 50px;
+    border-radius: 2px;
+    width: 50%;
+}
+
+.dontHaveAcctBtn {
+    color: #ed017f;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.loginWithGoogle-divider {
+    display: flex;
+    gap: 6.5px;
+    width: 100%;
+}
+

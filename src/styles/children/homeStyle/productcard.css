@@ -1,0 +1,143 @@
+.sponsored {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    margin-top: 16px;
+}
+
+.sponsored::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.sp-card {
+    background-color: white;
+    padding: 10px 0px 4px 0px;
+    cursor: pointer;
+    flex-shrink: 0;
+    max-width: 200px;
+    min-width: 200px;
+    position: relative;
+
+}
+
+.rating-div {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+}
+
+.rating-div span {
+    padding: 8px;
+    background-color: rgba(255, 59, 59, .2);
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 11px;
+}
+
+
+.sponsImg {
+    width: 130px;
+    align-self: center;
+    margin-top: 16px;
+}
+
+.sponsImg.extra {
+    width: 130px;
+    margin-top: 40px;
+    align-self: center;
+}
+
+.sponsName {
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.19;
+}
+
+.sponsDiscount {
+    background-color: rgba(255, 59, 59, .2);
+    color: #c60000;
+    width: 60px;
+    border-radius: 4px;
+    padding-left: 10px;
+    border-radius: 18px;
+    font-size: 12px;
+    flex-grow: 0;
+}
+
+/* PRODUCTS */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.prod-card {
+    background-color: white;
+    padding: 8px 0px 4px 0px;
+    cursor: pointer;   
+    position: relative;
+}
+
+.kongaNow {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 6px;
+}
+
+.prod-img {
+    width: 200px;
+    height: auto;
+}
+
+.prod-name {
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.19;
+    margin-bottom: 8px;
+}
+
+.prodDiscount {
+    background-color: rgba(255, 59, 59, .2);
+    color: #c60000;
+    width: 60px;
+    font-size: 11px;
+    border-radius: 10px;
+    border-bottom-right-radius: 180px;
+    border-bottom-left-radius: 180px;
+    text-align: center;
+}
+
+.add2cart {
+    background-color: white;
+    margin-top: 4px;
+    width: 100%;
+    border: 1px solid #ed017f;
+    color: #ed017f;
+    font-weight: 600;
+    font-size: 13.5px;
+    opacity: 0.9;
+    padding: 5px 0px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add2cart:hover {
+    background-color: #ed017f;
+    color: white;
+
+}
+
+@media(max-width: 1018px) {
+ 
+}

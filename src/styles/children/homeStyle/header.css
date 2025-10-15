@@ -1,0 +1,302 @@
+.noMargins {
+    margin: 0px;
+    padding: 0px;
+}
+
+.white {
+    background-color: #fff;
+}
+
+
+
+.h1-cont {
+    margin-top: 0;
+    padding-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow-x: visible;
+}
+
+.h1-desktopImg,
+.h1-mobileImg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    max-height: 66px;
+    object-fit: cover;
+}
+
+.h2-brandLinks {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #f6f6f6;
+    gap: 22px;
+    padding: 8px 0px;
+    flex-wrap: wrap;
+
+}
+
+.brand {
+    width: default;
+    height: 18px;
+    object-fit: cover;
+}
+
+.nav-sm-screen {
+    display: none;
+}
+
+.nav-sm-screenIcon {
+    color: black;
+}
+
+.nav-sm-menuBtn {
+    border: none;
+    background-color: white;
+    font-weight: bold;
+}
+
+.h3-quickLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #ed017f;
+    width: 100%;
+    padding: 0px 22px;
+    align-items: center;
+    gap: 6px;
+    margin: 0px;
+}
+
+.kongaLogo {
+    width: default;
+    height: 36px;
+}
+
+.quickLinks-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 20px 18px;
+    white-space: nowrap;
+
+}
+
+.quickLinks-link:hover {
+    background-color: #fff;
+    color: #ed017f;
+}
+
+.search-input1 {
+    border: none;
+    padding: 5px 0px 6px 10px;
+    border-radius: 3px 0px 0px 3px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-input1::placeholder {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-input1:focus {
+    border: none;
+    outline: none;
+}
+
+.search-icon1 {
+    border: none;
+    padding: 5px 13px 6px 13px;
+    background-color: #fba100;
+    border-radius: 0px 3px 3px 0px;
+    color: white;
+}
+
+.help {
+    color: #fff;
+    padding: 17.7px 18px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.help:hover {
+    background-color: #fff;
+    color: #ed017f;
+}
+
+.help-link {
+    text-decoration: none;
+    font-size: 13px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.help:hover .help-link {
+    color: #ed017f;
+}
+
+.help:hover .helpDropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.helpDropdown {
+    width: 200px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    color: #4a4a4a;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.helpDropd-link {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 12.5px;
+    padding: 9px 0px 9px 18px;
+}
+
+.helpDropd-link:hover {
+    background-color: rgb(240, 240, 245);
+    color: #ed017f;
+}
+
+.helpDropdown p {
+    font-weight: 600;
+    padding: 6px 0px 6px 18px;
+    margin: 0;
+}
+
+
+.helpDropdown p:hover {
+    color: #ed017f;
+    background-color: rgb(240, 240, 245);
+    cursor: text;
+
+}
+
+.myAcctDropdown-link {
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0px 12px 18px;
+    color: #4a4a4a;
+}
+
+.myAcctDropdown-link:hover {
+    background-color: rgb(240, 240, 245);
+    color: #ed017f;
+}
+
+.myAcctDropdown-link span {
+    font-size: 13px;
+}
+
+.loginSignup {
+    color: #fff;
+    background-color: #ed017f;
+    border: none;
+    font-size: 13px;
+    padding: 20px 18px;
+    white-space: nowrap;
+}
+
+.loginSignup:hover {
+    background-color: #fff;
+    color: #ed017f;
+}
+
+.add2cart-btn {
+    border: none;
+    border-radius: 1.5px;
+    background-color: #33b27b;
+    color: #fff;
+    padding: 7px 20px 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.add2cart-btn:hover {
+    background-color: #33b27bdc;
+}
+
+.product-count1 {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px 6px;
+    border-radius: 2px;
+    color: black;
+    background-color: #fff;
+}
+
+.add2cart-btn:hover .product-count1 {
+    background-color: #ffffffc9;
+}
+
+.logOut {
+    background-color: lightyellow;
+    border: none;
+}
+
+
+/*   MEDIA QUERIES  */
+
+
+/* MOBILE / TABS */
+@media(max-width : 1350px) {
+    .disappear1 {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .h1-mobileImg {
+        display: block;
+    }
+
+    .h2-brandLinks {
+        display: none;
+    }
+
+    .nav-sm-screen {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+
+    .nav-sm-screenInner {
+        display: flex;
+        gap: 10px;
+    }
+
+    .h3-quickLinks {
+        display: none;
+    }
+}
+
+
+/* DESKTOP */
+
+@media(min-width: 768px) {
+    .h1-desktopImg {
+        display: block;
+    }
+}

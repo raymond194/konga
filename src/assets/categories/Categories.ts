@@ -37,7 +37,7 @@ export const categories: CategoriesType[] = [
         subs: [
             {
                 label: "Mobile Phones",
-                items: ["Smart Phones", "Features Phones"]
+                items: ["SmartPhones", "Features Phones"]
             },
             {
                 label: "Mobile Phone Accessories",

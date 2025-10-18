@@ -208,9 +208,9 @@ const Header = () => {
             )
           }
 
-          <Link to='/' className='add2cart-btn' onClick={() => setCart(true)}>
+          <button className='add2cart-btn' onClick={() => setCart(true)}>
             <ShoppingCart size={17} /> <span style={{ fontSize: '13px' }}>My Cart</span>&nbsp; <span className='product-count1'>{cartItems.length}</span>
-          </Link>
+          </button>
 
         </div>
         {/* Navbar Section */}

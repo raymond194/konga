@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/Store'
 import { useSearchParams } from 'react-router-dom'
@@ -10,13 +10,16 @@ import AdComponent from '../../assets/ads/AdComponent'
 import { categories } from '../../assets/categories/Categories'
 import adDiaper from '../../assets/images/ads/adult diaper.jpg'
 import ProductCard from '../../components/ui/ProductCard'
-import Lg from '../../assets/images/LG.svg'
+import { Toast, ToastContainer } from 'react-bootstrap'
+
 
 const Body = () => {
   const hovered = useSelector((state: RootState) => state.hovered.value)
   const [searchParams] = useSearchParams()
   const categoryParam = searchParams.get('category')
   const subParam = searchParams.get('sub')
+  const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState('');
 
   const byCategory = categoryParam
     ? products.filter(p => normalize(p.category) === normalize(categoryParam))
@@ -25,18 +28,16 @@ const Body = () => {
   const bySub = subParam
     ? byCategory?.filter(
       p =>
-        normalize(p.subType) === normalize(subParam) &&
-        normalize(p.category) === normalize(categoryParam) // ensure same parent category
+        normalize(p.category) === normalize(categoryParam) && normalize(subParam) === normalize(p.subType) // ensure same parent category
     )
     : byCategory
 
   const filtered = bySub
   if (hovered) return null
-  if (filtered.length === 0) return <h1 style={{paddingTop: '230px'}}>No Products Found</h1>
+  if (filtered.length === 0) return <h1 style={{ paddingTop: '230px' }}>No Products Found</h1>
   return (
     <>
       <div className='cont'>
-
         <div className='header'>
           <div className='f-btw'>
             <div className='h-btns'>
@@ -100,14 +101,20 @@ const Body = () => {
               </div>
             </div>
 
-            <ProductCard filtProd={filtered} />
+            <ProductCard filtProd={filtered} setShowToast={setShowToast} setToastMessage={setToastMessage}/>
           </div>
         </div>
       </div >
-
+      <ToastContainer position="bottom-start" className="p-3" style={{ zIndex: '9999', position: 'fixed'}}>
+        <Toast show={showToast} onClose={() => setShowToast(false)} bg='success' delay={4000} autohide>
+          <Toast.Body style={{ color: "white", marginLeft: "10px", opacity: "1" }}>{toastMessage}</Toast.Body>
+        </Toast>
+      </ToastContainer>
     </>
   )
 }
+
+
 export default Body
 
 export const priceFilters = [

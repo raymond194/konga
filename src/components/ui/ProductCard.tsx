@@ -11,17 +11,19 @@ import { Modal } from 'react-bootstrap'
 
 type ProductCardProp = {
     filtProd: ProductType[]
+    setShowToast: React.Dispatch<React.SetStateAction<boolean>>
+    setToastMessage: React.Dispatch<React.SetStateAction<string>>
 }
 
-
-const ProductCard = ({ filtProd }: ProductCardProp) => {
+const ProductCard = ({ filtProd, setShowToast, setToastMessage }: ProductCardProp) => {
     const dispatch = useDispatch<AppDispatch>()
-    const cartItems = useSelector((state: RootState) => state.cartItems.value)
+    const cartItems = useSelector((state: RootState) => state?.cartItems?.value)
     const sponsored = products.filter((prod) => prod.sponsored)
     const handleAddToCartBtn = (p: ProductType) => {
         dispatch(addItem(p))
+        setShowToast(true)
+        setToastMessage(`${p.name} has been added to your Cart ✔`)
     }
-
     return (
         <>
             <div className='sponsored'>

@@ -13,7 +13,7 @@ type FormValues = {
 }
 
 const Login = () => {
-    const user = useSelector((state: RootState) => state.user)
+    const user = useSelector((state: RootState) => state?.user)
     const dispatch = useDispatch()
     const { register, formState: { errors }, handleSubmit } = useForm<FormValues>()
     const [showPswd, setShowPswd] = useState(false)

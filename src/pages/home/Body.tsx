@@ -28,8 +28,7 @@ const Body = () => {
   const bySub = subParam
     ? byCategory?.filter(
       p =>
-        normalize(p.subType) === normalize(subParam) &&
-        normalize(p.category) === normalize(categoryParam) // ensure same parent category
+        normalize(p.category) === normalize(categoryParam) && normalize(subParam) === normalize(p.subType) // ensure same parent category
     )
     : byCategory
 

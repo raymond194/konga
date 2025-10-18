@@ -1,0 +1,137 @@
+.cart-cont {
+    background-color: rgba(255, 255, 255, 0.959);
+    height: 87.7vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.cart-cont2 {
+    overflow-y: auto;
+        padding-bottom: 80px; /* ✅ add this */
+
+}
+
+.cart-cont2::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.product {}
+
+.product2 {
+    padding: 24px 24px 0px 24px;
+}
+
+.product2 img {
+    width: 70px;
+}
+
+.product2 span {
+    font-weight: bold;
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+.product2 span:hover {
+    opacity: 1;
+}
+
+
+.price {
+    font-size: 13px !important;
+    opacity: 0.9;
+
+}
+
+.price:hover {
+    font-size: 13px !important;
+    opacity: 1l;
+
+}
+
+.count {
+    display: "flex";
+    align-items: "center";
+    gap: "10px";
+    border: "1px solid #ccc";
+    border-radius: "6px";
+    width: "fit-content";
+    padding: "5px 10px";
+    margin-top: 10px;
+}
+
+.count button {
+    border: none;
+    background-color: white;
+    opacity: 0.7;
+    font-size: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 0px 8px 4px 8px;
+}
+
+.count span {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+
+    padding: 7px 8px 7px 8px;
+}
+
+.prodDel {
+    display: 'flex';
+    gap: '8px';
+    align-content: 'center';
+    margin-top: '16px';
+}
+
+.prodDel .savDel-btn {
+    opacity: 0.6;
+    border: 1px solid black;
+    border-radius: 2px;
+    color: black;
+    transition: border 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+    font-size: 12px;
+    padding: 4px 4px 4px 14px;
+    margin-right: 8px;
+}
+
+.prodDel .savDel-btn:hover {
+    opacity: 0.9;
+    color: #ed017f;
+    border: 1px solid #ed017f;
+
+}
+
+.subtotal {
+    font-weight: 600;
+    font-size: 18.5px;
+    color: black;
+}
+
+.checkout {
+    border: none;
+    background-color: #33b27b;
+    color: white;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px 0px;
+}
+
+.checkout-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px 24px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.subtotalPrice {
+    font-weight: 700;
+    font-size: 21px;
+}

@@ -954,7 +954,7 @@ export const products: ProductType[] = [
     {
         id: 71,
         name: 'Nicolette 2-piece Cardigan & Dress Set - Blue',
-        img: Nicolette1,
+        img: femaleGown,
         price: 12500,
         category: 'baby',
         subCategory: 'Fashion for Girls',
@@ -979,7 +979,7 @@ export const products: ProductType[] = [
     {
         id: 73,
         name: 'Nicolette 2-piece Cardigan & Dress Set - Blue',
-        img: Nicolette1,
+        img: Dildo,
         price: 12500,
         category: 'baby',
         subCategory: 'Fashion for Girls',

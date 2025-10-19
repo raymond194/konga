@@ -18,21 +18,30 @@ const Body = () => {
   const [searchParams] = useSearchParams()
   const categoryParam = searchParams.get('category')
   const subParam = searchParams.get('sub')
+  const searchParam = searchParams.get('search')
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState('');
+  // OLD CODE FOR CAT AND SUB FILTER
+  // const byCategory = categoryParam
+  //   ? products.filter(p => normalize(p.category) === normalize(categoryParam))
+  //   : []
 
-  const byCategory = categoryParam
-    ? products.filter(p => normalize(p.category) === normalize(categoryParam))
-    : []
+  // const bySub = subParam
+  //   ? byCategory?.filter(
+  //     p =>
+  //       normalize(p.category) === normalize(categoryParam) && normalize(subParam) === normalize(p.subType) // ensure same parent category
+  //   )
+  //   : byCategory
 
-  const bySub = subParam
-    ? byCategory?.filter(
-      p =>
-        normalize(p.category) === normalize(categoryParam) && normalize(subParam) === normalize(p.subType) // ensure same parent category
-    )
-    : byCategory
+  // const filtered = bySub
 
-  const filtered = bySub
+  const filtered = products.filter(p => {
+    const matchesCategory = categoryParam ? normalize(p.category) === normalize(categoryParam) : true
+    const matchesSub = subParam ? normalize(p.subType) === normalize(subParam) : true
+    const matchesSearch = searchParam ? [p.name, p.category, p.subCategory, p.subType].some(field => normalize(field).includes(normalize(searchParam))) : true
+    
+    return matchesCategory && matchesSub && matchesSearch
+  })
   if (hovered) return null
   if (filtered.length === 0) return <h1 style={{ paddingTop: '230px' }}>No Products Found</h1>
   return (
@@ -95,17 +104,13 @@ const Body = () => {
           </div>
 
           <div className='body-main'>
-            <div className='ads'>
-              <div className='ads-content'>
-                <img src={adDiaper} alt='diaper' /> <h3 style={{ fontWeight: "bold" }}>adult diaper factory</h3> <button>Open</button>
-              </div>
-            </div>
+      
 
-            <ProductCard filtProd={filtered} setShowToast={setShowToast} setToastMessage={setToastMessage}/>
+            <ProductCard filtProd={filtered} setShowToast={setShowToast} setToastMessage={setToastMessage} />
           </div>
         </div>
       </div >
-      <ToastContainer position="bottom-start" className="p-3" style={{ zIndex: '9999', position: 'fixed'}}>
+      <ToastContainer position="bottom-start" className="p-3" style={{ zIndex: '9999', position: 'fixed' }}>
         <Toast show={showToast} onClose={() => setShowToast(false)} bg='success' delay={4000} autohide>
           <Toast.Body style={{ color: "white", marginLeft: "10px", opacity: "1" }}>{toastMessage}</Toast.Body>
         </Toast>

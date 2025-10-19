@@ -34,7 +34,8 @@ import { categories } from '../../assets/categories/Categories'
 import Navbar from './Navbar'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Cart from '../../components/ui/Cart'
-
+import { products } from '../../assets/products/Products'
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [search, setSearch] = useState('');
@@ -52,14 +53,24 @@ const Header = () => {
   const isHome = pathname === '/'
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  //search
+  const filtSuggest = search ?
+    products.filter((p) => p.name.trim().toLowerCase().includes(search.trim().toLowerCase())).slice(0, 5) :
+    []
   const onSubmit1 = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // for searching products
+    if (!search.trim()) return
+    navigate(`/products?search=${encodeURIComponent(search)}`)
+    setSearch('')
   }
 
-  const handleSearch1 = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
-    // for updating search inputs
+  }
+
+  const handleSuggBtn = (name: string) => {
+    navigate(`/products?search=${encodeURIComponent(name)}`)
+    setSearch('')
   }
 
   const handleLoginModal = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -135,17 +146,54 @@ const Header = () => {
             Sell on Konga
           </Link>
 
-          <form onSubmit={onSubmit1} style={{ width: '545px', display: 'flex' }}>
-            <input type='text' value={search} onChange={handleSearch1} className='search-input1' placeholder='Search for products, brands and categories...' />
-            <button type='submit' className='search-icon1'><Search size={16} style={{ paddingBottom: '4px' }} /></button>
-          </form>
+          <div style={{ position: 'relative', width: '650px' }}>
+            <form onSubmit={onSubmit1} style={{ width: '545px', display: 'flex', zIndex: '10', position: 'relative' }}>
+              <input type='text' value={search} onChange={handleSearch} className='search-input1' placeholder='Search for products, brands and categories...' />
+              <button type='submit' className='search-icon1'><Search size={16} style={{ paddingBottom: '4px' }} /></button>
+            </form>
 
-          {/*SUGGESTION DIV try making it a component 
-         {search && (
-            <div className='suggestion-box'>
-             <h4>suggestion box</h4>
-            </div>
-          )} */}
+            <AnimatePresence>
+              {search && (
+                <>
+                  <motion.div
+                    className="backdrop"
+                    onClick={() => setSearch('')}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.7 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                  />
+
+                  <motion.div
+                    className="suggestionBox"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {filtSuggest.length > 0 ? (
+                      <>
+                        <h4>SUGGESTIONS</h4>
+                        <div>
+                          {filtSuggest.map((sugg, i) => (
+                            <button
+                              key={`${sugg.id}-${i}`}
+                              onClick={() => handleSuggBtn(sugg.name)}
+                            >
+                              {sugg.name.toLowerCase()}
+                            </button>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <h4>{(`no result found for ${search}`).toUpperCase()}</h4>
+                    )}
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+
+          </div>
 
 
           <div className='help' >
@@ -168,7 +216,7 @@ const Header = () => {
           {/* USERLOGIN|| USERACCT*/}
           {user?.isLoggedIn ?
             <div className='help'>
-              <Link to='/' className='help-link' style={{ whiteSpace: 'nowrap' }} title='myAccount' aria-label='myAccount'>
+              <Link to='/' className='help-link' style={{ whiteSpace: 'nowrap', zIndex: '9999' }} title='myAccount' aria-label='myAccount'>
                 My Account
               </Link>
 
@@ -218,7 +266,7 @@ const Header = () => {
       </div >
 
       <Modal isOpen={cart} onClose={() => setCart(false)} title='Cart Overview'>
-       <Cart />
+        <Cart />
       </Modal>
     </>
   )

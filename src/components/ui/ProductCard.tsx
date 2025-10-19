@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { ProductType } from '../../assets/products/productType'
 import '../../styles/children/homeStyle/productcard.css'
 import { products } from '../../assets/products/Products'
@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { AppDispatch, RootState } from '../../store/Store'
 import { addItem } from '../../store/cartitems/cartSlice'
 import { Modal } from 'react-bootstrap'
+import { useSearchParams } from "react-router-dom"
 
 type ProductCardProp = {
     filtProd: ProductType[]
@@ -18,7 +19,13 @@ type ProductCardProp = {
 const ProductCard = ({ filtProd, setShowToast, setToastMessage }: ProductCardProp) => {
     const dispatch = useDispatch<AppDispatch>()
     const cartItems = useSelector((state: RootState) => state?.cartItems?.value)
-    const sponsored = products.filter((prod) => prod.sponsored)
+    const [searchParams] = useSearchParams()
+    
+    const sponsored = useMemo(() => {
+        const s = products.filter(p => p.sponsored)
+        return s.sort(() => Math.random() - 0.5)
+    }, [searchParams.toString()])
+
     const handleAddToCartBtn = (p: ProductType) => {
         dispatch(addItem(p))
         setShowToast(true)
@@ -26,6 +33,7 @@ const ProductCard = ({ filtProd, setShowToast, setToastMessage }: ProductCardPro
     }
     return (
         <>
+    
             <div className='sponsored'>
                 {sponsored.map((spons, i) => (
                     <div className='sp-card' key={`${spons.id}-${i}`}>

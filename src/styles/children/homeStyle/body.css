@@ -6,7 +6,7 @@
 
 .cont {
     overflow-y: scroll;
-    overflow-x: clip;
+    overflow-x: scroll;
     margin-top: 230px;
 }
 
@@ -75,9 +75,10 @@
     background-color: rgb(243, 242, 242);
     display: flex;
     gap: 18px;
-    padding: 14px 18px 0px 18px;
+    padding: 14px 18px 0px 10px;
     width: 100%;
     align-items: flex-start;
+    padding-bottom: 60px;
 }
 
 .body::-webkit-scrollbar {
@@ -85,8 +86,8 @@
 }
 
 .body-side {
-    width: 18%;
-    min-width: 245.7px;
+    width: 14%;
+    min-width: 225px;
     background-color: white;
     padding: 12px 5.5px 20px 5.5px;
     flex-grow: 0;
@@ -113,52 +114,18 @@
     width: 82%;
 }
 
-.ads {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
 
-.ads-content {
-    background-color: white;
-    width: 100%;
-    padding: 0px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.ads-content img {
-    width: 100%;
-    max-width: 80px;
-}
-
-.ads-content button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 1px 40px 4px 40px;
-    border-radius: 16px;
-    font-size: 20px;
-}
-
-.ads-content h3 {
-    white-space: nowrap;
-}
-
-@media(max-width: 1115px) {
-    .ads-content {
-        justify-content: flex-start;
-        gap: 14px;
-    }
-
-    .ads-content button {
-        display: none;
+@media(max-width: 1284px) {
+    .body-side {
+        width: 14%;
+        min-width: 180px;
+        background-color: white;
+        padding: 12px 5.5px 20px 5.5px;
+        flex-grow: 0;
     }
 }
 
-@media(max-width: 822px) {
+@media(max-width: 1054px) {
     .body-side {
         display: none;
     }
@@ -173,16 +140,11 @@
         display: none;
     }
 
-
-}
-
-@media(max-width: 338px) {
-    .ads-content {
-             justify-content: center;
-
-    }
-
-    .ads-content h3 {
-        display: none;
+    .cont {
+        overflow-y: scroll;
+        overflow-x: scroll;
+        margin-top: 120px;
+        
     }
 }
+

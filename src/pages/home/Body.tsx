@@ -113,6 +113,7 @@ const Body = () => {
             <div style={{ display: "flex", marginBottom: '10px', marginTop: '20px' }}>
               <h6 style={{ fontWeight: "bold" }}>Custom Price Range</h6>
             </div>
+            
             <div style={{marginBottom: '10px'}}>
               {priceFilters.map((check) => {
                 return <label key={check.id} style={{ display: 'block' }}>
@@ -121,11 +122,25 @@ const Body = () => {
                 </label>
               })}
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: 'baseline', marginBottom: '10px' }}>
+
+            <div style={{ display: filtered.length > 2 ?"flex" : 'none', justifyContent: "space-between", alignItems: 'baseline', marginBottom: '10px' }}>
+              <h6 style={{ fontWeight: "bold" }}>Brand</h6>  <span style={{ fontWeight: 'bold' }}>{'--'}</span>
+            </div>
+
+            <div style={{marginBottom: '10px', display: filtered.length > 2 ? 'block' : 'none'}}>
+              {priceFilters.map((check) => {
+                return <label key={check.id} style={{ display: 'block' }}>
+                  <input name='price' type='radio' />
+                  &nbsp; <span style={{ fontSize: '12px' }}>{check.label}</span>
+                </label>
+              })}
+            </div>
+
+             <div style={{ display: filtered.length > 2 ?"flex" : 'none', justifyContent: "space-between", alignItems: 'baseline', marginBottom: '10px' }}>
               <h6 style={{ fontWeight: "bold" }}>Item Availability</h6>  <span style={{ fontWeight: 'bold' }}>{'--'}</span>
             </div>
 
-            <div style={{marginBottom: '10px'}}>
+            <div style={{marginBottom: '10px', display: filtered.length > 2 ? 'block' : 'none'}}>
               {priceFilters.map((check) => {
                 return <label key={check.id} style={{ display: 'block' }}>
                   <input name='price' type='radio' />
@@ -133,6 +148,7 @@ const Body = () => {
                 </label>
               })}
             </div>
+            
           </div>
 
           <div className='body-main'>

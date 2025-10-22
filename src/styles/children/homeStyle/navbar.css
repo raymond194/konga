@@ -15,7 +15,7 @@
 
  .nav-bar .nav-link {
      color: #fff;
-     padding: 13px 38px;
+     padding: 15px 38px;
      white-space: nowrap;
      font-size: 13px;
      text-decoration: none;
@@ -86,6 +86,11 @@
 
  @media(max-width: 767px) {
      .nav-links {
-         display: none;
+         display: flex;
      }
+
+      .nav-bar .nav-link {
+             padding: 10px 38px;
+
+      }
  }

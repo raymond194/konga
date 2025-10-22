@@ -110,7 +110,7 @@ const Header = () => {
                 <img src={brand.src} alt={brand.alt} className='brand' />
               </a>
             ) : (
-              <Link to='/' key={brand.href} title={brand.alt} aria-label={brand.alt}>
+              <Link to='/' key={`${brand.href}-${i}`} title={brand.alt} aria-label={brand.alt}>
                 <img src={brand.src} className='brand' />
               </Link>
             )

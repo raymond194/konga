@@ -63,9 +63,9 @@ export const products: ProductType[] = [
         category: 'computers',
         subCategory: 'Wifi and Networking',
         subType: 'Modems and Mifi',
-        todayDeal: true,
         rating: 5,
-        sameDay: "Same Day Delivery Lagos | Abuja"
+        sameDay: "Same Day Delivery Lagos | Abuja",
+        brand :'starlink'
     },
     {
         id: 2,
@@ -75,10 +75,10 @@ export const products: ProductType[] = [
         discount: 29,
         category: 'computers',
         subCategory: 'Wifi and Networking',
-        subType: 'Modems and Mifi',
-        todayDeal: true, 
+        subType: 'Modems and Mifi', 
         rating: 3, 
-        sameDay: "Same Day Delivery Lagos | Abuja"
+        sameDay: "Same Day Delivery Lagos | Abuja",
+        brand: 'starlink'
 
     },
     {
@@ -89,7 +89,6 @@ export const products: ProductType[] = [
         category: 'phones',
         subCategory: 'Mobile Phones',
         subType: 'Smartphones',
-        todayDeal: true,
         rating: 3,
                 sameDay: "Same Day Delivery Lagos | Abuja"
 
@@ -102,9 +101,9 @@ export const products: ProductType[] = [
         category: 'computers',
         subCategory: 'Wifi and Networking',
         subType: 'Modems and Mifi',
-        todayDeal: true,
         rating: 3,
-                sameDay: "Same Day Delivery Lagos | Abuja"
+                sameDay: "Same Day Delivery Lagos | Abuja",
+                brand: 'starlink'
 
     },
     {
@@ -163,6 +162,7 @@ export const products: ProductType[] = [
         subCategory: 'Kitchen & Dining',
         subType: 'Cookers ',
         sponsored: true,
+        brand: 'lg'
     },
     {
         id: 10,
@@ -173,7 +173,8 @@ export const products: ProductType[] = [
         subCategory: 'Laptops',
         subType: 'Mini Laptops and Netbooks',
         sponsored: true,
-        rating: 4
+        rating: 4,
+        brand: 'lg'
     },
     {
         id: 11,
@@ -184,7 +185,8 @@ export const products: ProductType[] = [
         subCategory: 'Laptops',
         subType: 'Mini Laptops and Netbooks',
         sponsored: true,
-        rating: 3
+        rating: 3,
+        brand:'xiaomi'
     },
 
     {
@@ -219,7 +221,7 @@ export const products: ProductType[] = [
         subCategory: 'Laptops',
         subType: 'Mini Laptops and Netbooks',
         sponsored: true,
-        sameDay: 'Same Day Delivery Lagos'
+        sameDay: 'Same Day Delivery Lagos',
     },
     {
         id: 15,
@@ -232,7 +234,8 @@ export const products: ProductType[] = [
         subType: 'Mini Laptops and Netbooks',
         soldBy: 'Falana Nation',
         reviewCount: 'No',
-        sameDay: 'Same Day Delivery Lagos'
+        sameDay: 'Same Day Delivery Lagos',
+        brand: 'hp'
     },
     {
         id: 16,
@@ -246,6 +249,7 @@ export const products: ProductType[] = [
         soldBy: 'ibksolution',
         reviewCount: 'No',
         sameDay: 'Same Day Delivery Lagos',
+        brand: 'hp'
 
     },
     {
@@ -311,7 +315,8 @@ export const products: ProductType[] = [
         subType: 'Notebooks',
         soldBy: 'Konga',
         reviewCount: 'No',
-        sameDay: 'same Day Delivery Lagos'
+        sameDay: 'same Day Delivery Lagos',
+        brand:'zinox'
     },
     {
         id: 22,
@@ -413,6 +418,7 @@ export const products: ProductType[] = [
         subType: 'CPUs',
         soldBy: 'Christ Embassy Integrsted Systems',
         reviewCount: 'No',
+        brand:'zte'
     },
 
 
@@ -439,6 +445,7 @@ export const products: ProductType[] = [
         subType: 'CPUs',
         soldBy: 'Rasonglobal',
         reviewCount: 'No',
+        brand: 'zte'
     },
     {
         id: 32,
@@ -491,6 +498,7 @@ export const products: ProductType[] = [
         subType: 'All in Ones',
         soldBy: 'Transform Africa',
         reviewCount: 'No',
+        brand: 'huawei'
     },
     {
         id: 36,
@@ -572,7 +580,8 @@ export const products: ProductType[] = [
         subCategory: 'Desktops and Monitors',
         subType: 'All in Ones',
         sponsored: true,
-        sameDay: 'Same Day Delivery Lagos'
+        sameDay: 'Same Day Delivery Lagos',
+        brand: 'zinox'
     },
     {
         id: 43,
@@ -586,7 +595,8 @@ export const products: ProductType[] = [
         subType: 'Smartphones',
         soldBy: 'Konga',
         reviewCount: 'No',
-        sameDay: 'Same Day Delivery Lagos'
+        sameDay: 'Same Day Delivery Lagos',
+        brand: 'infinix'
     },
     {
         id: 44,
@@ -611,11 +621,12 @@ export const products: ProductType[] = [
         subType: 'Smartphones',
         soldBy: 'Konga',
         reviewCount: 0,
-        sameDay: 'Same Day Delivery Lagos'
+        sameDay: 'Same Day Delivery Lagos',
+        brand: 'xiaomi'
     },
     {
         id: 45,
-        name: 'tecno Smart 10HD-',
+        name: 'Tecno Smart 10HD-',
         img: infinixSmart101,
         price: 206500,
         discount: 10,
@@ -625,6 +636,7 @@ export const products: ProductType[] = [
         subType: 'Smartphones',
         soldBy: 'ode niye',
         reviewCount: 'No',
+        brand: 'tecno'
     },
     {
         id: 46,
@@ -717,7 +729,8 @@ export const products: ProductType[] = [
         subType: 'Smart TVs',
         soldBy: 'yomilincon',
         reviewCount: 1,
-        sameDay: 'Same Day Delivery Lagos'
+        sameDay: 'Same Day Delivery Lagos',
+        sponsored:true
     },
     {
         id: 53,
@@ -731,6 +744,7 @@ export const products: ProductType[] = [
         subType: 'DVD players',
         soldBy: 'yomilincon Brand',
         reviewCount: 0,
+        sponsored: true
     },
     {
         id: 54,
@@ -854,7 +868,8 @@ export const products: ProductType[] = [
         soldBy: 'Konga',
         reviewCount: 2,
         rating: 4,
-        sameDay: "Same Day Delivery Lagos"
+        sameDay: "Same Day Delivery Lagos",
+        sponsored: true
     },
     {
         id: 64,
@@ -867,6 +882,7 @@ export const products: ProductType[] = [
         subType: 'Air Conditioners & Coolers',
         soldBy: 'ife',
         reviewCount: 0,
+        brand: 'thermocool'
     },
     {
         id: 65,
@@ -1099,6 +1115,7 @@ export const products: ProductType[] = [
         soldBy: 'Konga  H-Plus',
         reviewCount: 'NO',
         rating: 0,
+
     },
     {
         id: 83,
@@ -1111,7 +1128,7 @@ export const products: ProductType[] = [
         soldBy: 'Konga  H-Plus',
         reviewCount: 'NO',
         rating: 0,
-        sameDay: "Same Day Delivery Lagos"
+        sameDay: "Same Day Delivery Lagos",
     },
     {
         id: 84,
@@ -1124,7 +1141,7 @@ export const products: ProductType[] = [
         soldBy: 'Konga  H-Plus',
         reviewCount: 'NO',
         rating: 0,
-        sameDay: "Same Day Delivery Lagos"
+        sameDay: "Same Day Delivery Lagos",
     },
 
     {
@@ -1180,7 +1197,7 @@ export const products: ProductType[] = [
         soldBy: 'Konga  H-Plus',
         reviewCount: 'NO',
         rating: 0,
-        sameDay: "Same Day Delivery Lagos"
+        sameDay: "Same Day Delivery Lagos",
     },
     {
         id: 89,
@@ -1209,6 +1226,34 @@ export const products: ProductType[] = [
         reviewCount: 'NO',
         rating: 0,
         sameDay: "Same Day Delivery Lagos"
+    },
+        {
+        id: 91,
+        name: 'Tecno 11 pro',
+        img: xiaomi1,
+        price: 105000,
+        category: 'computers',
+        subCategory: 'Laptops',
+        subType: 'Mini Laptops and Netbooks',
+        sponsored: true,
+        rating: 3,
+        brand: 'tecno'
+    },
+     {
+        id: 92,
+        name: 'Infinix Hot 30 Play',
+        img: itelP55,
+        discount: 4,
+        price: 70000,
+        rating: 5,
+        category: 'phones',
+        subCategory: 'Mobile Phones',
+        subType: 'Smartphones',
+        soldBy: 'Konga',
+        reviewCount: 0,
+        sameDay: 'Same Day Delivery Lagos',
+        brand: 'infinix'
+
     },
 
 ]

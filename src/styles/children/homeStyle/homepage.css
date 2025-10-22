@@ -1,0 +1,291 @@
+.contain {
+    padding: 240px 14px 20px 14px;
+    background-color: #f3f2f2;
+    z-index: 10;
+}
+
+.h1 {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 30px;
+}
+
+.homeLinks1-cont {
+    text-decoration: none;
+    width: 100%;
+    background-color: white;
+    padding: 20px 0px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.homeLinks1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    padding: 0px 10px;
+
+}
+
+.icons1 {
+    color: #ed017f;
+}
+
+.homeLinks1 span {
+    color: black;
+    opacity: 0.6;
+    text-decoration: none;
+    font-size: 12.4px;
+    text-wrap: nowrap;
+}
+
+.h2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+}
+
+.todayDeals-text {
+    display: flex;
+    gap: 20px;
+    background-color: #94004f;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    align-items: center;
+}
+
+.todayDeals-text h1 {
+    font-size: clamp(22px, 2vw, 30px);
+    font-weight: bold;
+    color: white;
+    padding: 0;
+    margin: 0;
+
+}
+
+.todayDeals-text span {
+    color: white;
+    font-size: 13px;
+}
+
+
+.h2 .todayDeals-cont {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(210px, 1fr));
+    gap: 16px;
+}
+
+.h2 .todayDeals-card {
+    padding: 20px 10px;
+    background-color: white;
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.0);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+
+}
+
+.h2 .todayDeals-card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.h2 .todayDeals-card>img {
+    width: clamp(60px, 10vw, 100px);
+    height: auto;
+    object-fit: contain;
+
+
+}
+
+.todayDeals-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.todayDeals-desc span {
+    font-size: clamp(12px, 1.8vw, 14px);
+    font-weight: 400;
+
+}
+
+.officialStore {
+    background-color: gold;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 0px;
+    margin-top: 40px;
+}
+
+.sameday-cont {
+    display: flex;
+    overflow-x: scroll;
+    gap: 12px;
+    width: 100%;
+}
+
+.sameCard:hover {
+    box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.brand-section {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(120px, 20%, 183px), 1fr));
+    margin-top: 20px;
+}
+
+.brand-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.brand-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.23);
+    transition: background 0.4s ease;
+}
+
+.brand-card:hover::after {
+
+    background: rgba(0, 0, 0, 0.50);
+}
+
+.brand-card h2 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+.slide-images {
+    width: 100%;
+    display: flex;
+
+}
+
+.slide-images img {
+
+    object-fit: contain;
+    width: clamp(150px, 50%, 50%);
+    max-height: 200px;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+
+}
+
+.extra1 {
+    margin-bottom: 40px;
+}
+
+.extra2 {
+    margin-top: 40px;
+}
+
+@media(max-width: 1115px) {
+    .extra1 {
+        margin-bottom: 0px;
+
+    }
+
+    .extra2 {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    .onlineShop {
+        margin-top: 0px;
+    }
+
+    
+}
+@media(max-width: 789px) {
+
+    .youSave {
+        display: none;
+    }
+
+    .h2 .todayDeals-cont {
+        margin: 0px;
+        display: flex;
+        overflow-x: scroll;
+        gap: 16px;
+    }
+
+    .h2 .todayDeals-card {
+        width: 230px;
+        padding: 60px 16px;
+        background-color: white;
+        box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.0);
+        transition: box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        justify-content: center;
+
+    }
+
+    .contain {
+        padding: 220px 14px 20px 14px;
+    }
+}
+
+
+@media(max-width: 767px) {
+    .h1 {
+        display: flex;
+        gap: 12px;
+        padding-bottom: 30px;
+        overflow-x: scroll;
+        flex-shrink: 0;
+    }
+
+    .h1::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+ .contain {
+        padding: 125px 14px 20px 14px;
+    }
+}
+
+
+@media (max-width: 565px) {
+.T_C {
+    display: none;
+}
+}

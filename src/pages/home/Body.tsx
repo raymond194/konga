@@ -19,6 +19,7 @@ const Body = () => {
   const categoryParam = searchParams.get('category')
   const subParam = searchParams.get('sub')
   const searchParam = searchParams.get('search')
+  const brandParam = searchParams.get('brand')
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState('');
   // OLD CODE FOR CAT AND SUB FILTER
@@ -39,18 +40,26 @@ const Body = () => {
     const matchesCategory = categoryParam ? normalize(p.category) === normalize(categoryParam) : true
     const matchesSub = subParam ? normalize(p.subType) === normalize(subParam) : true
     const matchesSearch = searchParam ? [p.name, p.category, p.subCategory, p.subType].some(field => normalize(field).includes(normalize(searchParam))) : true
-    
-    return matchesCategory && matchesSub && matchesSearch
+    const brandSearch = brandParam ? p.brand?.toLowerCase() === brandParam.toLowerCase() : true
+
+    return matchesCategory && matchesSub && matchesSearch && brandSearch
   })
   if (hovered) return null
-  if (filtered.length === 0) return <h1 style={{ paddingTop: '230px' }}>No Products Found</h1>
+  if (filtered.length === 0) return (
+    <h1 style={{ paddingTop: '230px', paddingLeft: '10px' }}><Link className='backToHome' to='/'> Back to Home</Link> No Products Found!</h1>
+  )
   return (
     <>
       <div className='cont'>
         <div className='header'>
           <div className='f-btw'>
             <div className='h-btns'>
-              <Link to="/" className='h-btn'>Home</Link>&nbsp;{">"}<button className='h-btn red' disabled>{categoryParam && categoryParam}</button>{subParam && '>'}<button className='h-btn red' disabled>{subParam && subParam}</button>
+              <Link to="/" className='h-btn'>Home</Link>
+              {">"}
+              {categoryParam && <button className='h-btn red' disabled>{categoryParam}</button>}
+              {subParam && <>{'>'} <button className='h-btn red' disabled>{subParam}</button></>}
+              {searchParam && <button className='h-btn red' disabled>{searchParam}</button>}
+              {brandParam && <button className='h-btn red' disabled>{brandParam.toLocaleLowerCase()}</button>}
             </div>
             <span style={{ fontSize: "11px", color: 'gray' }}>1-40 of 2000 results</span>
           </div>
@@ -101,10 +110,33 @@ const Body = () => {
               })}
             </div>
 
+            <div style={{ display: "flex", marginBottom: '10px', marginTop: '20px' }}>
+              <h6 style={{ fontWeight: "bold" }}>Custom Price Range</h6>
+            </div>
+            <div style={{marginBottom: '10px'}}>
+              {priceFilters.map((check) => {
+                return <label key={check.id} style={{ display: 'block' }}>
+                  <input name='price' type='radio' />
+                  &nbsp; <span style={{ fontSize: '12px' }}>{check.label}</span>
+                </label>
+              })}
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: 'baseline', marginBottom: '10px' }}>
+              <h6 style={{ fontWeight: "bold" }}>Item Availability</h6>  <span style={{ fontWeight: 'bold' }}>{'--'}</span>
+            </div>
+
+            <div style={{marginBottom: '10px'}}>
+              {priceFilters.map((check) => {
+                return <label key={check.id} style={{ display: 'block' }}>
+                  <input name='price' type='radio' />
+                  &nbsp; <span style={{ fontSize: '12px' }}>{check.label}</span>
+                </label>
+              })}
+            </div>
           </div>
 
           <div className='body-main'>
-      
+
 
             <ProductCard filtProd={filtered} setShowToast={setShowToast} setToastMessage={setToastMessage} />
           </div>
@@ -125,8 +157,12 @@ export default Body
 export const priceFilters = [
   { id: 1, label: "Under ₦2000", min: 0, max: 2000 },
   { id: 2, label: "₦2000 to ₦5000", min: 2000, max: 5000 },
-  { id: 3, label: "₦5000 to ₦1000", min: 5000, max: 10000 },
-  { id: 4, label: "₦1000 to ₦0000", min: 10000, max: 20000 },
+  { id: 3, label: "₦5000 to ₦10000", min: 5000, max: 10000 },
+  { id: 4, label: "₦10000 to ₦20000", min: 10000, max: 20000 },
+  { id: 5, label: "₦20000 to ₦40000", min: 20000, max: 40000 },
+  { id: 6, label: "Above ₦40000", min: 40000 },
+
+
 ];
 
 

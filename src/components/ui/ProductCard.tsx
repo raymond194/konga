@@ -33,7 +33,6 @@ const ProductCard = ({ filtProd, setShowToast, setToastMessage }: ProductCardPro
     }
     return (
         <>
-    
             <div className='sponsored'>
                 {sponsored.map((spons, i) => (
                     <div className='sp-card' key={`${spons.id}-${i}`}>

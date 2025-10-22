@@ -14,4 +14,5 @@ export type ProductType = {
         todayDeal?: boolean
         reviewCount?: number | string
         sameDay?: string
+       brand?: string
     }

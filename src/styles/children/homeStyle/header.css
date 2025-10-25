@@ -6,7 +6,7 @@
 .white {
     background-color: #fff;
 }
-
+           
 
 
 .h1-cont {
@@ -52,6 +52,16 @@
 
 .nav-sm-screenIcon {
     color: black;
+    position: relative;
+}
+
+.nav-sm-screenIcon span {
+position: absolute;
+top: -6px;
+left: 20px;
+font-weight: bold;
+color: red;
+font-size: 12.5px;
 }
 
 .nav-sm-menuBtn {
@@ -70,6 +80,7 @@
     align-items: center;
     gap: 6px;
     margin: 0px;
+    flex-shrink: 1;
 }
 
 .kongaLogo {
@@ -314,12 +325,27 @@ font-weight: 700;
 
 /*   MEDIA QUERIES  */
 
+@media(max-width : 1105px) {
+.kongaLogo {
+  display: none;
+}
+}
 
 /* MOBILE / TABS */
 @media(max-width : 1350px) {
     .disappear1 {
         display: none;
     }
+
+    .help {
+        display: none;
+    }
+}
+
+@media(max-width : 856px) {
+.add2cart-btn {
+    display: none;
+}
 }
 
 @media(max-width: 767px) {
@@ -351,8 +377,10 @@ font-weight: 700;
 
 /* DESKTOP */
 
+
 @media(min-width: 768px) {
     .h1-desktopImg {
         display: block;
     }
 }
+

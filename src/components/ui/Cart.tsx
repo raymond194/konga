@@ -43,9 +43,11 @@ const Cart = () => {
                                 <hr style={{ opacity: '0.1', margin: '10px 0px 0px 0px' }} />
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <div className='count'>
+                                      
                                         <button onClick={() => dispatch(updateQuantity({ id: p.id, quantity: Math.max(p.quantity - 1, 1) }))}>-</button>
                                         <span>{p.quantity}</span>
                                         <button onClick={() => dispatch(updateQuantity({ id: p.id, quantity: p.quantity + 1 }))}>+</button>
+                                    
                                     </div>
                                     <div className='prodDel'>
                                         <button className='savDel-btn'>❤️ Save Later</button>

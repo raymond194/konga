@@ -7,15 +7,17 @@
     background: rgba(0, 0, 0, .85);
     display: flex;
     justify-content: flex-end;
+    align-items: stretch;
+    overflow: hidden;
     z-index: 1000;
 }
 
 .modal-panel {
     width: 100%;
     max-width: 449px;
-    min-width: 449px;
     height: 100%;
     position: relative;
+    flex-shrink: 1;
 }
 
 .modal-panel .modal-header {
@@ -72,10 +74,11 @@
 @media(max-width: 575px) {
     .modal-panel {
         width: 100%;
-        max-width: none;
-        min-width: none;
         height: 100%;
         position: relative;
+        max-width: 100%;
+        /* allow it to fill the screen */
+        min-width: 0;
 
     }
 }

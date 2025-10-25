@@ -129,7 +129,7 @@ const Header = () => {
           <div className='nav-sm-screenInner'>
             <Link to='/' className='nav-sm-screenIcon'><Store size={22} cursor='pointer' /></Link>
 
-            <Link to='/' className='nav-sm-screenIcon'> <ShoppingCart size={22} cursor='pointer' /></Link>
+            <Link to='/' className='nav-sm-screenIcon' onClick={() => setCart(true)}> <ShoppingCart size={22} cursor='pointer' /> <span>{cartItems.length}</span></Link>
           </div>
         </div>
 
@@ -138,7 +138,7 @@ const Header = () => {
             <img src={kongabrand} alt='konga' className='kongaLogo' />
           </Link>
 
-          <Link to='/' title='store Locator' aria-label='store Locator' className='quickLinks-link disappear1'>
+          <Link to='/' title='store Locator' aria-label='store Locator' className='quickLinks-link disappear1 '>
             Store Locator
           </Link>
 

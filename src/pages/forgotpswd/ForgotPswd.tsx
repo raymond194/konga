@@ -3,7 +3,7 @@ import imageBrand from '../../assets/images/brands/kongabrand.jpg'
 import { Link } from 'react-router-dom'
 const ForgotPswd = () => {
   return (
-    <div style={{display:'flex', flexDirection:'column'}}>
+    <div style={{display:'flex', flexDirection:'column', paddingTop: '240px', minHeight: "100dvh", width: "100%"}}>
       <h1>Oopsie, page yet to be updated</h1>
       <img src={imageBrand} alt='konga' width='400px' height='100px' />
       <Link to='/'>Go back to Home</Link>

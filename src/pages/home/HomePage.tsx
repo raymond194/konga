@@ -102,7 +102,7 @@ const HomePage = () => {
       </div>
 
 
-      <h3 style={{ fontSize: '26px', paddingTop: '30px', fontWeight: 'bold' }}>Sponsored Products</h3>
+      <h3 className='sponsored-text'>Sponsored Products</h3>
 
       <div className='sponsored'>
         {sponsored.map((spons, i) => (
@@ -136,7 +136,7 @@ const HomePage = () => {
       </div>
 
       {/* SAME DAY PRODUCTS */}
-      <div style={{ backgroundColor: '#ffe9e9', display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', padding: '8px 60px 8px 0px', marginTop: '26px', marginBottom: '16px' }}>
+      <div style={{ backgroundColor: '#ffe9e9', display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', padding: '8px 60px 8px 0px', marginTop: '26px', marginBottom: '16px', overflowX: 'clip'}}>
         <div style={{ display: 'flex', gap: '30px' }}>
           <h5 style={{ fontWeight: '700', textWrap:'nowrap', fontSize: 'clamp(14px, 2vw, 20px)'}}>{`Same Day Delivery Lagos ${'('}Konga Now${')'}`}</h5>
           <span style={{ color: '#8b054d', fontWeight: '600', fontSize: '14px', textWrap:'nowrap' }} className='T_C'>See All Items</span>
